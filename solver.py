@@ -16,6 +16,12 @@ def validate(bo, num, pos):
         if bo[pos[0]][i] == num and pos[1] != i:
             return False
 
+    for i in range(len(bo)):      # check column
+        if bo[i][pos[1]] == num and pos[0] != 0:
+            return False
+    box_x = pos[1] // 3           # validate box 
+    box_y = pos[0] // 3
+
 
 def print_board(bo):              # where bo is the board
     for i in range(len(bo)):
