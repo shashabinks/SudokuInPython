@@ -1,4 +1,4 @@
-# SudokuInPython
-Sudoku Game written in Python
+# Sudoku In Python
+## Sudoku Game written in Python
 
-Solves any given Sudoku problem 
+Solves any given Sudoku problem
