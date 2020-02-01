@@ -14,7 +14,7 @@ board = [
 def print_board(bo):              # where bo is the board
     for i in range(len(board)):
         if i % 3 == 0 and i!=0:   # separate each cell
-            print("---------------------")
+            print("------------------------")
 
         for j in range(len(bo[0])):
             if j % 3 == 0 and j != 0:
@@ -29,7 +29,7 @@ def print_board(bo):              # where bo is the board
 
 
 def main():
-    print_board()
+    print_board(board)
 
 
 
