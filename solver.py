@@ -12,7 +12,7 @@ board = [
 
 
 def print_board(bo):              # where bo is the board
-    for i in range(len(board)):
+    for i in range(len(bo)):
         if i % 3 == 0 and i!=0:   # separate each cell
             print("------------------------")
 
@@ -24,6 +24,14 @@ def print_board(bo):              # where bo is the board
                 print(bo[i][j])
             else:
                 print(str(bo[i][j]) + " ", end="")
+
+
+def return_blank(bo):
+    for i in range(len(bo)):
+        for j in range(len(bo[0])):
+            if bo[i][j] == 0:
+                return (i,j)       # returns empty cell
+
 
 
 
