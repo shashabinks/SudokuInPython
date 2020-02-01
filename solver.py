@@ -11,6 +11,29 @@ board = [
 ]
 
 
+def solve(bo):
+    find = return_blank(bo)
+    if not find:                  # if found solution
+        return True
+    else:
+        row, col = find
+
+    for i in range(1,10):
+        if validate(bo,i, (row,col)):
+            bo[row][col] = i
+
+            if solve(bo):
+                return True
+
+            bo[row][col] = 0      # backtrack
+
+    return False
+
+
+
+
+
+
 def validate(bo, num, pos):
     for i in range(len(bo[0])):   # check row
         if bo[pos[0]][i] == num and pos[1] != i:
@@ -27,7 +50,6 @@ def validate(bo, num, pos):
             if bo[i][j] == num and (i,j)!= pos:
                 return False
     return True
-
 
 
 def print_board(bo):              # where bo is the board
@@ -50,16 +72,17 @@ def return_blank(bo):
         for j in range(len(bo[0])):
             if bo[i][j] == 0:
                 return (i,j)       # returns empty cell
+    return None
 
 
+print_board(board)
+
+solve(board)
+
+print("________________________")
 
 
-
-def main():
-    print(print_board(board))
+print("________________________")
 
 
-
-
-
-main()
+print_board(board)
