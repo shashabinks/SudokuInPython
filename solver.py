@@ -11,6 +11,12 @@ board = [
 ]
 
 
+def validate(bo, num, pos):
+    for i in range(len(bo[0])):   # check row
+        if bo[pos[0]][i] == num and pos[1] != i:
+            return False
+
+
 def print_board(bo):              # where bo is the board
     for i in range(len(bo)):
         if i % 3 == 0 and i!=0:   # separate each cell
@@ -37,7 +43,8 @@ def return_blank(bo):
 
 
 def main():
-    print_board(board)
+    print(print_board(board))
+
 
 
 
